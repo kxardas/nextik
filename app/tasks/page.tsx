@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { createTask } from "@/app/lib/actions";
+import { createTask } from "@/lib/actions";
 import { redirect } from "next/navigation";
 import { Figtree } from "next/font/google";
 

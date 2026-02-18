@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { createTask } from "@/app/lib/actions";
+import { createTask } from "@/lib/actions";
 
 export function TaskForm() {
   const [state, formAction, isPending] = useActionState(createTask, {

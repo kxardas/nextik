@@ -1,10 +1,8 @@
-import styles from './page.module.css';
-
-import AuthButton from "./components/AuthButton/AuthButton";
+import AuthButton from "../components/auth/AuthButton/AuthButton";
 
 export default function Home() {
   return (
-    <div className={styles.hero}>
+    <div>
       <AuthButton></AuthButton>
     </div>
   );
