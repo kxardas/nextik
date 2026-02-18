@@ -1,0 +1,73 @@
+.header {
+  width: 100%;
+  background: #111;
+  color: white;
+  border-bottom: 1px solid #222;
+  box-shadow: 13px 0 18px rgba(35, 1, 65, 0.6);
+
+  position: sticky !important;
+  top: 0;
+  z-index: 999;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a,
+.right button {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: .2s all ease;
+}
+
+.nav a:hover,
+.right button:hover {
+  opacity: 1;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; /*todo burger iguess*/
+  }
+}
