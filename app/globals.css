@@ -39,6 +39,15 @@ a {
   text-decoration: none;
 }
 
+.main-app {
+  width: 100%;
+  min-height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

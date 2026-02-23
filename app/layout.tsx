@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={clsx(figtree.className)}>
         <Providers>
           <Header />
-          <main>{children}</main>
+          <main className="main-app">{children}</main>
         </Providers>
       </body>
     </html>

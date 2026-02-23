@@ -1,0 +1,6 @@
+.hero {
+  width: 350px;
+  height: 500px;
+  box-shadow: 0 50px 19px -40px rgba(11, 1, 36, 0.3), 0 10px 20px rgba(0, 0, 0, .1);
+  border-radius: 36px;
+}
