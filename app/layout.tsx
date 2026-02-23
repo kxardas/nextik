@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Providers } from "./providers";
 import { Figtree } from "next/font/google";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={figtree.className}>
+      <body className={clsx(figtree.className)}>
         <Providers>
           <Header />
           <main>{children}</main>

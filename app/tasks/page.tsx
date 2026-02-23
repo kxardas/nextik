@@ -4,6 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { createTask } from "@/lib/actions";
 import { redirect } from "next/navigation";
 import { Figtree } from "next/font/google";
+import clsx from "clsx";
 
 import styles from "./page.module.css";
 import { TaskForm } from "./task-form";
@@ -26,19 +27,21 @@ export default async function TasksPage() {
   });
 
   return (
-    <div className={figtree.className}>
-      <div className={styles.container}>
+    <div className={clsx(figtree.className, styles.container)}>
+      <div className={styles.wrapper}>
         <h1>My Tasks</h1>
-        
-        <TaskForm />
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>
-              <span>{task.title}</span>
-              <input type='checkbox' checked={task.completed} readOnly />
-            </li>
-          ))}
-        </ul>
+
+        <section className={styles.section} >
+          <TaskForm />
+          <ul>
+            {tasks.map((task) => (
+              <li key={task.id}>
+                <span>{task.title}</span>
+                <input type='checkbox' checked={task.completed} readOnly />
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );

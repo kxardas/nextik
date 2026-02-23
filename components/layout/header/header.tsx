@@ -12,7 +12,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <div className={styles.logo}>MyLogo</div>
+          <div className={styles.logo}>Nextik</div>
         </div>
 
         <nav className={styles.nav}>

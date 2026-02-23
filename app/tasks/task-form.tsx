@@ -5,19 +5,18 @@ import { createTask } from "@/lib/actions";
 
 export function TaskForm() {
   const [state, formAction, isPending] = useActionState(createTask, {
-    message: "",
+    message: "Task created",
     errors: {},
   });
 
   return (
-    <form action={formAction} style={{ marginBottom: "2rem" }}>
+    <form action={formAction}>
       <div>
         <input
           type='text'
           name='title'
           placeholder='What to do?'
           disabled={isPending}
-          style={{ padding: "8px", flex: 1, color: "black" }}
         />
         <button type='submit' disabled={isPending}>
           {isPending ? "Adding..." : "Add"}

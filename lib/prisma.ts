@@ -11,8 +11,6 @@ const adapter = new PrismaBetterSqlite3({
   url: dbUrl,
 });
 
-
-export const prisma =
-  globalForPrisma.prisma ?? new PrismaClient({ adapter });
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter });
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
