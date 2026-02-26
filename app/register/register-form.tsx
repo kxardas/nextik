@@ -41,7 +41,7 @@ export function RegisterForm() {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className={styles.right}>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <div className={styles.toolbox}>
         <div className={styles.inputWrap}>
           <input type='email' name='email' id='email' placeholder=' ' required />

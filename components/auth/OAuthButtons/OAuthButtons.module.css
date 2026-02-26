@@ -1,0 +1,10 @@
+.providers {
+  display: flex;
+
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.provider {
+  height: 70px;
+}
