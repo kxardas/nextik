@@ -1,14 +1,19 @@
 import "./globals.css";
 
 import { Providers } from "./providers";
-import { Figtree } from "next/font/google";
+import { Figtree, Montserrat } from "next/font/google";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import Header from "@/components/layout/header/header";
 
 const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400", "700"]
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={clsx(figtree.className)}>
         <Providers>
           <Header />
-          <main className="main-app">{children}</main>
+          <main className='main-app'>{children}</main>
         </Providers>
       </body>
     </html>

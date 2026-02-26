@@ -14,7 +14,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  passwordHash  String
+  passwordHash  String?
 
   tasks Task[]
 
