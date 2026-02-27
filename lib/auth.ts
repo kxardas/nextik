@@ -12,8 +12,7 @@ const credentialsValidation = z
   .object({
     email: z.string().email().max(255),
     password: z.string().min(8).max(72),
-  })
-  .strict();
+  }).strip();
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -21,14 +20,6 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_ID ?? "",
-      clientSecret: process.env.GITHUB_SECRET ?? "",
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_ID ?? "",
-      clientSecret: process.env.GOOGLE_SECRET ?? "",
-    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
@@ -61,7 +52,6 @@ export const authOptions: NextAuthOptions = {
           }
 
           const verified = await argon2.verify(user.passwordHash, password);
-
           if (!verified) {
             return null;
           }
@@ -72,9 +62,19 @@ export const authOptions: NextAuthOptions = {
             name: user.name,
           };
         } catch (err) {
+          console.log(err);
+          
           return null;
         }
       },
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID ?? "",
+      clientSecret: process.env.GITHUB_SECRET ?? "",
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID ?? "",
+      clientSecret: process.env.GOOGLE_SECRET ?? "",
     }),
   ],
   callbacks: {

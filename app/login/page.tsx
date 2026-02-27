@@ -7,6 +7,8 @@ import { authOptions } from "@/lib/auth";
 import { Montserrat, Figtree } from "next/font/google";
 import { redirect } from "next/navigation";
 import { LoginForm } from "./login-form";
+import { getProviders } from "next-auth/react";
+import OAuthButtons from "@/components/auth/OAuthButtons/OAuthButtons";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -19,6 +21,7 @@ const figtree = Figtree({
 });
 
 export default async function LoginPage() {
+  const providers = await getProviders();
   const session = await getServerSession(authOptions);
 
   if (session) {
@@ -34,7 +37,10 @@ export default async function LoginPage() {
         <section className={styles.left}>
           <Image src={img} width={200} height={200} alt='User image' />
         </section>
-        <LoginForm />
+        <section className={styles.right}>
+          <LoginForm />
+          {providers && <OAuthButtons providers={providers} />}
+        </section>
       </div>
     </div>
   );

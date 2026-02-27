@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import clsx from "clsx";
 
 import { signIn, signOut, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function Header() {
   const { data: session } = useSession();
@@ -21,7 +22,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.right}>
-          <button onClick={() => session ? signOut() : signIn()}>{session ? "Log out" : "Log in"}</button>
+          <button onClick={() => session ? signOut() : redirect("/login")}>{session ? "Log out" : "Log In"}</button>
         </div>
       </div>
     </header>

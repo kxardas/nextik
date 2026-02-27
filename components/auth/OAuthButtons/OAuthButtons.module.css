@@ -1,10 +1,38 @@
 .providers {
   display: flex;
+  flex-direction: column;
 
   margin-top: 10px;
-  gap: 5px;
+  gap: 10px;
+  width: 100%;
 }
 
 .provider {
-  height: 70px;
+  height: 50px;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 89px;
+  box-shadow: 0 0 0 2px #2b2929;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  position: relative;
+  transition: 0.2s all ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.provider:hover {
+  color: #000;
+  background: transparent;
+}
+
+.providerIcon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
 }

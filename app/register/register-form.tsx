@@ -31,17 +31,16 @@ export function RegisterForm() {
 
 
     if (!res.ok) {
-      console.log("Failure!");
+      // Implement unsuccess register
       return;
     }
     else {
-      console.log("Success!");
-      redirect("/login");
+      redirect("/login?register=1");
     }
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
       <div className={styles.toolbox}>
         <div className={styles.inputWrap}>
           <input type='email' name='email' id='email' placeholder=' ' required />

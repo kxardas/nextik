@@ -28,34 +28,31 @@ export function LoginForm() {
     const email = (formData.get("email") as string) || "";
     const password = (formData.get("password") as string) || "";
 
-    // const res = await fetch("/api/auth/register", {
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   method: "POST",
-    //   body: JSON.stringify({email, password, name})
-    // });
-
-    // const res = await signIn("credentials", { email, password });
-
-    // if (!res.ok) {
-    //   console.log("Failure!");
-    //   return;
-    // } else {
-    //   console.log("Success!");
-    //   redirect("/login");
-    // }
+    const res = await signIn("credentials", { email, password });
+    if (res?.ok) {
+      redirect("/?login=1");
+    } else {
+      // Implement unsuccess login
+      return;
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.right}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.toolbox}>
         <div className={styles.inputWrap}>
-          <input type='email' name='email' id='email' placeholder=' ' required />
+          <input type='email' name='email' id='email' placeholder=' ' required autoComplete='off' />
           <label htmlFor='email'>Email</label>
         </div>
         <div className={styles.inputWrap}>
-          <input type='password' name='password' id='password' placeholder=' ' required />
+          <input
+            type='password'
+            name='password'
+            id='password'
+            placeholder=' '
+            required
+            autoComplete='off'
+          />
           <label htmlFor='password'>Password</label>
         </div>
         <button type='submit' className={clsx(styles.btnsubmit, montserrat.className)}>
