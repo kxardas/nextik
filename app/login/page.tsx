@@ -20,7 +20,10 @@ const figtree = Figtree({
 });
 
 interface Props {
-  searchParams: { register?: string };
+  searchParams: {
+    register?: string;
+    error?: string;
+  };
 }
 
 export default async function LoginPage({ searchParams }: Props) {
@@ -30,14 +33,14 @@ export default async function LoginPage({ searchParams }: Props) {
   if (session) {
     redirect("/");
   }
+
   const providers = await getProviders();
-  const registered = resolvedSearchParams.register;
+  const { register, error } = resolvedSearchParams;
 
   return (
     <div className={clsx(styles.hero, montserrat.className)}>
-      {registered === "1" && (
-        <ToastNotification message='Register was successful!' type='success' />
-      )}
+      {register === "1" && <ToastNotification message='Register was successful!' type='success' />}
+      {error && <ToastNotification message='Email or password is incorrect' type='error'/>}
       <div className={clsx(styles.top, figtree.className)}>
         <p>Welcome back!</p>
         <p className={styles.topSecondary}>Sign in to your account</p>

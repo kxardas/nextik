@@ -32,7 +32,6 @@ export function LoginForm() {
     if (res?.ok) {
       redirect("/?login=1");
     } else {
-      // Implement unsuccess login
       return;
     }
   }

@@ -1,5 +1,5 @@
 .toast {
-  width: 250px;
+  width: 290px;
   height: 60px;
   padding: 10px;
   z-index: 999;
@@ -15,7 +15,30 @@
   overflow: hidden;
 
   border-radius: 16px 4px 4px 16px;
+}
+
+.success {
   box-shadow: 4px 3px 8px rgba(0, 0, 0, .2), inset -8px 0 0 -2px #1db954;
+}
+
+.success::before {
+  content: "✅";
+  display: block;
+}
+
+.error {
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, .2), inset -8px 0 0 -2px #f62727;
+}
+
+.error::before {
+  content: '❌';
+  display: block;
+}
+
+.success::before,
+.error::before {
+  font-size: 12px;
+  margin-right: 3px;
 }
 
 .toast::after {
