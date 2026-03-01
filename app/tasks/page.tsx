@@ -18,7 +18,7 @@ export default async function TasksPage() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/api/auth/signin");
+    redirect("/login");
   }
 
   const tasks = await prisma.task.findMany({

@@ -1,0 +1,65 @@
+.toast {
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+  z-index: 999;
+  position: absolute;
+  top: 80;
+  right: -355;
+  animation: slideIn .5s ease forwards, vanish .3s ease forwards 4.45s;
+  font-weight: 400;
+  letter-spacing: -.8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+
+  border-radius: 16px 4px 4px 16px;
+  box-shadow: 4px 3px 8px rgba(0, 0, 0, .2), inset -8px 0 0 -2px #1db954;
+}
+
+.toast::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #0d6efd;
+  height: 3px;
+  width: calc(100% - 6px);
+  bottom: 0;
+  left: 0;
+
+  animation: load 4s linear forwards;
+  animation-delay: .5s;
+}
+
+@keyframes slideIn {
+  from {
+    right: -355;
+  }
+
+  to {
+    right: 10;
+  }
+}
+
+@keyframes load {
+  from {
+    width: calc(100% - 6px);
+  }
+
+  to {
+    width: 0px;
+  }
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1;
+    right: 10;
+  }
+
+  to {
+    opacity: 0;
+    right: -355;
+  }
+}

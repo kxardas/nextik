@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
     const hash = await argon2.hash(password, { type: argon2.argon2id });
 
-    await prisma.user.create({
+    const user = await prisma.user.create({
       data: {
         name: name?.trim() ?? null,
         email: email.trim().toLowerCase(),
@@ -39,7 +39,16 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json({ ok: true }, { status: 201 });
+    return NextResponse.json({
+        ok: true,
+        data: {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        },
+      },
+      { status: 201 },
+    );
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
       if (err.code === "P2002") {
@@ -58,3 +67,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Bad request" }, { status: 400 });
   }
 }
+

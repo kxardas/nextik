@@ -1,7 +1,7 @@
 .hero {
-  padding: 20px 30px 50px 30px;
-  width: 750px;
-  min-height: 500px;
+  width: 400px;
+  min-height: 380px;
+  padding: 30px 25px 18px 25px;
   box-shadow:
     0 45px 19px -40px rgba(11, 1, 36, 0.2),
     0 10px 20px rgba(0, 0, 0, 0.1);
@@ -15,32 +15,28 @@
 
 .top {
   letter-spacing: normal !important;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 800;
   padding: 0 0 12px 0;
   margin-bottom: 15px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.topSecondary {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.8px;
+  color: #817f7f;
 }
 
 .bottom {
   display: flex;
-}
-
-.left {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.right {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 100%;
 }
 
 .form {
@@ -54,6 +50,10 @@
   flex-direction: column;
 
   gap: 16px;
+}
+
+.main {
+  width: 100%;
 }
 
 .toolbox button {
@@ -78,7 +78,7 @@
   box-shadow: 2px 2px 8px rgba(39, 78, 16, 0.2);
   font-size: 14px;
 
-  transition: 0.2s all ease;
+  transition: 0.15s all ease;
 }
 
 .toolbox .inputWrap label {
@@ -99,12 +99,12 @@
   top: 10px;
   left: 20px;
   font-size: 12px;
-  color: #24d613;
+  color: #1db954;
 }
 
 .toolbox .inputWrap input:focus,
 .toolbox .inputWrap input:not(:placeholder-shown) {
-  box-shadow: 0 0 0 2px #29f616;
+  box-shadow: 0 0 0 1.6px #1db954;
 }
 
 .btnsubmit {
@@ -116,17 +116,34 @@
   border-radius: 50px;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.7px;
   box-shadow: none;
 
-  background-color: #29f616;
-  border: 2px solid #29f616;
+  background-color: #1db954;
   color: #ffffff;
 
   transition: 0.2s all ease;
 }
 
 .btnsubmit:hover {
-  background-color: transparent;
-  color: #29f616;
+  background-color: #179141;
+}
+
+.btnsubmit:active {
+  scale: .98;
+}
+
+.authRedirect {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center; 
+  color: #00000091;
+  letter-spacing: -.3px;
+}
+
+.authRedirect a {
+  text-decoration: underline !important;
+  color: #0d6efd;
 }

@@ -1,6 +1,4 @@
 import styles from "./register.module.css";
-import img from "../images/user_6.svg";
-import Image from "next/image";
 import clsx from "clsx";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
@@ -32,15 +30,17 @@ export default async function RegisterPage() {
   return (
     <div className={clsx(styles.hero, montserrat.className)}>
       <div className={clsx(styles.top, figtree.className)}>
-        <p>Welcome!</p>
+        <p>Welcome to Nextik!</p>
+        <p className={styles.topSecondary}>Register your account</p>
       </div>
       <div className={styles.bottom}>
-        <section className={styles.left}>
-          <Image src={img} width={200} height={200} alt='User image' />
-        </section>
-        <section className={styles.right}>
+        <section className={styles.main}>
           <RegisterForm />
           {providers && <OAuthButtons providers={providers} />}
+          <div className={clsx(styles.authRedirect, figtree.className)}>
+            Already have an account?{" "}
+            <a href="/login">Log in</a>
+          </div>
         </section>
       </div>
     </div>
