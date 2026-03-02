@@ -1,9 +1,19 @@
-import AuthButton from "../components/auth/AuthButton/AuthButton";
+import { ToastNotification } from "@/components/toast/toast";
+interface Props {
+  searchParams: {
+    logout?: string;
+    login?: string;
+    error?: string;
+  };
+}
 
-export default function Home() {
+export default async function Home({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
+  const { login, logout, error } = resolvedSearchParams;
   return (
     <div>
-      <AuthButton></AuthButton>
+      {login && <ToastNotification message='Successfully logged in' type='success' />}
+      {logout && <ToastNotification message='Successfully logged out' type='success' />}
     </div>
   );
 }

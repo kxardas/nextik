@@ -43,15 +43,16 @@
   width: 100%;
   border-radius: 89px;
   overflow: hidden;
+  border-radius: 89px;
 }
-
+/* 
 .providerContainer:first-of-type {
-  border-radius: 89px 0 0 89px;
+  border-radius: 89px 6px 6px 89px;
 }
 
 .providerContainer:last-of-type {
-  border-radius: 0 89px 89px 0;
-}
+  border-radius: 6px 89px 89px 6px;
+} */
 
 .provider {
   height: 40px;

@@ -8,6 +8,7 @@ import { LoginForm } from "./login-form";
 import { getProviders } from "next-auth/react";
 import OAuthButtons from "@/components/auth/OAuthButtons/OAuthButtons";
 import { ToastNotification } from "@/components/toast/toast";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -50,7 +51,7 @@ export default async function LoginPage({ searchParams }: Props) {
           <LoginForm />
           {providers && <OAuthButtons providers={providers} />}
           <div className={clsx(styles.authRedirect, figtree.className)}>
-            Don't have an account? <a href='/register'>Sign up</a>
+            Don't have an account? <Link href='/register'>Sign up</Link>
           </div>
         </section>
       </div>

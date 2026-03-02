@@ -13,7 +13,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <div className={styles.left}>
-          <div className={styles.logo}>Nextik</div>
+          <a href="/" className={styles.logo}>Nextik</a>
         </div>
 
         <nav className={styles.nav}>
@@ -22,7 +22,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.right}>
-          <button onClick={() => session ? signOut() : redirect("/login")}>{session ? "Log out" : "Log In"}</button>
+          <button onClick={() => session ? signOut({callbackUrl: "/?logout=1"}) : redirect("/login")}>{session ? "Log out" : "Log In"}</button>
         </div>
       </div>
     </header>

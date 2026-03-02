@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { RegisterForm } from "./register-form";
 import { getProviders } from "next-auth/react";
 import OAuthButtons from "@/components/auth/OAuthButtons/OAuthButtons";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,8 +39,7 @@ export default async function RegisterPage() {
           <RegisterForm />
           {providers && <OAuthButtons providers={providers} />}
           <div className={clsx(styles.authRedirect, figtree.className)}>
-            Already have an account?{" "}
-            <a href="/login">Log in</a>
+            Already have an account? <Link href='/login'>Log in</Link>
           </div>
         </section>
       </div>

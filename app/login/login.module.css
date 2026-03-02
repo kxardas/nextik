@@ -107,6 +107,16 @@
   box-shadow: 0 0 0 1.6px #1db954;
 }
 
+.error input:focus + label,
+.error input:not(:placeholder-shown) + label {
+  color: #f62727 !important;
+}
+
+.error input:focus,
+.error input:not(:placeholder-shown) {
+  box-shadow: 0 0 0 1.6px #f62727 !important;
+}
+
 .btnsubmit {
   outline: none;
   border: none;
@@ -146,4 +156,24 @@
 .authRedirect a {
   text-decoration: underline !important;
   color: #0d6efd;
+}
+
+.icon {
+  animation: rotate 2s ease infinite;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+.errorMsg {
+  color: red;
+  width: 100%;
+  text-align: center;
 }
