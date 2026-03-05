@@ -44,7 +44,7 @@ export function ToastNotification({ message, type, duration = 4800 }: Props) {
 
   return (
   <div className={clsx(styles.toast, poppins.className, styles[type], isClosed && styles.closing)}>
-    <X size={16} strokeWidth={3.3} absoluteStrokeWidth onClick={handleClose} className={styles.close}/>
+    <X size={15} strokeWidth={3} absoluteStrokeWidth onClick={handleClose} className={styles.close}/>
     {message}
   </div>
   );

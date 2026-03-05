@@ -1,4 +1,6 @@
 import { ToastNotification } from "@/components/toast/toast";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 interface Props {
   searchParams: {
     logout?: string;
@@ -8,6 +10,9 @@ interface Props {
 }
 
 export default async function Home({ searchParams }: Props) {
+  const session = await getServerSession(authOptions);
+
+
   const resolvedSearchParams = await searchParams;
   const { login, logout, error } = resolvedSearchParams;
   return (

@@ -18,7 +18,6 @@ export default function Header() {
 
         <nav className={styles.nav}>
           <a href='/'>Home</a>
-          <a href='/tasks'>Tasks</a>
         </nav>
 
         <div className={styles.right}>
