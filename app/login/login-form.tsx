@@ -1,5 +1,5 @@
 "use client";
-import styles from "./login.module.css";
+import styles from "@/components/auth/auth.module.css";
 import clsx from "clsx";
 import { Montserrat } from "next/font/google";
 import { redirect } from "next/navigation";

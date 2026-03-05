@@ -6,8 +6,8 @@ import styles from "./OAuthButtons.module.css";
 import { Figtree } from "next/font/google";
 import clsx from "clsx";
 import Image from "next/image";
-import googleImg from "./img/icons8-google.svg";
-import githubImg from "./img/github-svgrepo-com(2).svg";
+import googleImg from "./img/google.svg";
+import githubImg from "./img/github.svg";
 
 const montserrat = Figtree({
   subsets: ["latin"],
@@ -33,8 +33,8 @@ export default function OAuthButtons({ providers }: Props) {
               >
                 Authorize with{" "}
                 <Image
-                  width={32}
-                  height={32}
+                  width={25}
+                  height={25}
                   className={styles.providerIcon}
                   src={provider.name === "Google" ? googleImg : githubImg}
                   alt='icon'

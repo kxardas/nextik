@@ -1,4 +1,5 @@
-import styles from "./login.module.css";
+import styles from "@/components/auth/auth.module.css";
+// import styles from "./login.module.css";
 import clsx from "clsx";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";

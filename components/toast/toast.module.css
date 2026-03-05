@@ -1,7 +1,7 @@
 .toast {
-  width: 290px;
+  width: 330px;
   height: 60px;
-  padding: 25px;
+  padding: 40px 25px 25px 15px;
   z-index: 999;
   position: absolute;
   top: 80;
@@ -13,6 +13,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
+  transition: .1s all ease;
 
   border-radius: 16px 4px 4px 16px;
 }
@@ -71,11 +72,32 @@
   }
 }
 
+@keyframes opacityOut {
+  from {
+    opacity: 1;
+    scale: 1.1;
+  }
+
+  to {
+    opacity: 0;
+    scale: .5;
+  }
+}
+
 .close {
   position: absolute;
-  width: 17px;
-  top: 3;
-  left: 9;
+  top: 8;
+  left: 12;
   color: #979797;
   cursor: pointer;
+  transition: .2s all ease;
+}
+
+.close:hover {
+  color: #ff0000;
+}
+
+.closing {
+  scale: 1.2;
+  opacity: 0;
 }
