@@ -39,3 +39,22 @@ Clone the repository
 git clone https://github.com/kxardas/nextik.git
 cd nextik
 ```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+```bash
+npm run dev
+```
+
+Open http://localhost:3000
+
+### Future plans
+- CRUD functionality
+- User dashboard
+- Role-based access
+- Improved UI and UX
